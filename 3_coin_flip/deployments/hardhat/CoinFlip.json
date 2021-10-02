@@ -1,0 +1,108 @@
+{
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "consecutiveWins",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_guess",
+          "type": "bool"
+        }
+      ],
+      "name": "flip",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd9de52f9f3d757648cac22474b2082d9398a4acaaf6538f81ac5a00de5afcf1d",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "transactionIndex": 0,
+    "gasUsed": "265808",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3d895aa8cbcd44e8600e5c56cb67e95828d9efab049c5ee08a25895c1278fae8",
+    "transactionHash": "0xd9de52f9f3d757648cac22474b2082d9398a4acaaf6538f81ac5a00de5afcf1d",
+    "logs": [],
+    "blockNumber": 1,
+    "cumulativeGasUsed": "265808",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "899a15c854a86645d558a682e6f099c4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.8+commit.dddeac2f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"consecutiveWins\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_guess\",\"type\":\"bool\"}],\"name\":\"flip\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/CoinFlip.sol\":\"CoinFlip\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n// CAUTION\\n// This version of SafeMath should only be used with Solidity 0.8 or later,\\n// because it relies on the compiler's built in overflow checks.\\n\\n/**\\n * @dev Wrappers over Solidity's arithmetic operations.\\n *\\n * NOTE: `SafeMath` is no longer needed starting with Solidity 0.8. The compiler\\n * now has built in overflow checking.\\n */\\nlibrary SafeMath {\\n    /**\\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            uint256 c = a + b;\\n            if (c < a) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the substraction of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b > a) return (false, 0);\\n            return (true, a - b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\\n            // benefit is lost if 'b' is also tested.\\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\\n            if (a == 0) return (true, 0);\\n            uint256 c = a * b;\\n            if (c / a != b) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a / b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a % b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the addition of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `+` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Addition cannot overflow.\\n     */\\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a + b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a - b;\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `*` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Multiplication cannot overflow.\\n     */\\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a * b;\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a / b;\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a % b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\\n     * overflow (when the result is negative).\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {trySub}.\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b <= a, errorMessage);\\n            return a - b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a / b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting with custom message when dividing by zero.\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {tryMod}.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a % b;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x8666f020bd8fc9dc14f07e2ebc52b5f236ab4cdde7c77679b08cb2f94730043b\",\"license\":\"MIT\"},\"contracts/test/CoinFlip.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.8;\\n\\nimport '@openzeppelin/contracts/utils/math/SafeMath.sol';\\n\\ncontract CoinFlip {\\n\\n  using SafeMath for uint256;\\n  uint256 public consecutiveWins;\\n  uint256 lastHash;\\n  uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;\\n\\n  constructor() public {\\n    consecutiveWins = 0;\\n  }\\n\\n  function flip(bool _guess) public returns (bool) {\\n    uint256 blockValue = uint256(blockhash(block.number.sub(1)));\\n\\n    if (lastHash == blockValue) {\\n      revert();\\n    }\\n\\n    lastHash = blockValue;\\n    uint256 coinFlip = blockValue.div(FACTOR);\\n    bool side = coinFlip == 1 ? true : false;\\n\\n    if (side == _guess) {\\n      consecutiveWins++;\\n      return true;\\n    } else {\\n      consecutiveWins = 0;\\n      return false;\\n    }\\n  }\\n}\",\"keccak256\":\"0x86e56e1f5621ae0fe28bbdfb08da21f4b730d17cd98ee420706f69d4af5b7e58\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60806040527f800000000000000000000000000000000000000000000000000000000000000060025534801561003457600080fd5b506000808190555061036a8061004b6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80631d263f671461003b578063e6f334d71461006b575b600080fd5b6100556004803603810190610050919061019d565b610089565b60405161006291906101d9565b60405180910390f35b61007361012e565b604051610080919061020d565b60405180910390f35b6000806100a060014361013490919063ffffffff16565b4060001c90508060015414156100b557600080fd5b8060018190555060006100d36002548361014a90919063ffffffff16565b90506000600182146100e65760006100e9565b60015b9050841515811515141561011a5760008081548092919061010990610257565b919050555060019350505050610129565b60008081905550600093505050505b919050565b60005481565b6000818361014291906102a0565b905092915050565b600081836101589190610303565b905092915050565b600080fd5b60008115159050919050565b61017a81610165565b811461018557600080fd5b50565b60008135905061019781610171565b92915050565b6000602082840312156101b3576101b2610160565b5b60006101c184828501610188565b91505092915050565b6101d381610165565b82525050565b60006020820190506101ee60008301846101ca565b92915050565b6000819050919050565b610207816101f4565b82525050565b600060208201905061022260008301846101fe565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610262826101f4565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82141561029557610294610228565b5b600182019050919050565b60006102ab826101f4565b91506102b6836101f4565b9250828210156102c9576102c8610228565b5b828203905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600061030e826101f4565b9150610319836101f4565b925082610329576103286102d4565b5b82820490509291505056fea26469706673582212204ecfc9e87ff4f7277a8ff2f9c1e23a4bc88a81c0bbc0cb1d9049dc2ea93a20b264736f6c63430008080033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80631d263f671461003b578063e6f334d71461006b575b600080fd5b6100556004803603810190610050919061019d565b610089565b60405161006291906101d9565b60405180910390f35b61007361012e565b604051610080919061020d565b60405180910390f35b6000806100a060014361013490919063ffffffff16565b4060001c90508060015414156100b557600080fd5b8060018190555060006100d36002548361014a90919063ffffffff16565b90506000600182146100e65760006100e9565b60015b9050841515811515141561011a5760008081548092919061010990610257565b919050555060019350505050610129565b60008081905550600093505050505b919050565b60005481565b6000818361014291906102a0565b905092915050565b600081836101589190610303565b905092915050565b600080fd5b60008115159050919050565b61017a81610165565b811461018557600080fd5b50565b60008135905061019781610171565b92915050565b6000602082840312156101b3576101b2610160565b5b60006101c184828501610188565b91505092915050565b6101d381610165565b82525050565b60006020820190506101ee60008301846101ca565b92915050565b6000819050919050565b610207816101f4565b82525050565b600060208201905061022260008301846101fe565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610262826101f4565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82141561029557610294610228565b5b600182019050919050565b60006102ab826101f4565b91506102b6836101f4565b9250828210156102c9576102c8610228565b5b828203905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b600061030e826101f4565b9150610319836101f4565b925082610329576103286102d4565b5b82820490509291505056fea26469706673582212204ecfc9e87ff4f7277a8ff2f9c1e23a4bc88a81c0bbc0cb1d9049dc2ea93a20b264736f6c63430008080033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 353,
+        "contract": "contracts/test/CoinFlip.sol:CoinFlip",
+        "label": "consecutiveWins",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 355,
+        "contract": "contracts/test/CoinFlip.sol:CoinFlip",
+        "label": "lastHash",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 358,
+        "contract": "contracts/test/CoinFlip.sol:CoinFlip",
+        "label": "FACTOR",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

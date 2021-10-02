@@ -1,0 +1,1 @@
+This repositroy contains code that is associated with solving solidity security challenges from the ethernaut project: https://ethernaut.openzeppelin.com/

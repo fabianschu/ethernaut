@@ -1,8 +1,8 @@
 task("flip", "flips coin").setAction(async (params, { ethers }) => {
   console.log(`Flip coin...`);
-  const coinFlipInstance = await ethers.getContract("Flipper");
+  const flipperInstance = await ethers.getContract("Flipper");
 
-  const tx = await coinFlipInstance.flip(true);
+  const tx = await flipperInstance.flip();
   console.log(tx);
 });
 
